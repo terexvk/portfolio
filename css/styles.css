@@ -279,3 +279,36 @@ nav {
   h2,h3,p,h1{
     color:var(--text-color);
   }
+
+
+
+  @media only screen and (max-width: 480px) {
+    /* General adjustments for smaller screens */
+    body {
+      font-size: 14px;
+    }
+  
+    nav {
+      font-size: 12px;
+    }
+  
+    .about-container,
+    .contact-container {
+      max-width: 540px; /* Adjust for smaller content area */
+    }
+  
+    .about-img,
+    .project-1-img {
+      width: 100%;
+      height: auto; /* Ensure images fit within space */
+    }
+  
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      width: 100%; /* Utilize full width on smaller screens */
+    }
+  }
+
+  
+  
