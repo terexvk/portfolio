@@ -1,26 +1,74 @@
-// dark and light mode toggle
-var icon = document.getElementById('darkModeToggle');
+const icon = document.getElementById('darkModeToggle');
+const musicIcon = document.getElementById('musicToggle');
+let isDarkMode = false;
+let isSoundOn = false;
 
-icon.onclick = function(){
-    document.body.classList.toggle("light-theme");
-    if(document.body.classList.contains("light-theme")){
-        icon.src="images/sun.png";
-    }else{
-        icon.src="images/moon.jpg";
+const audio = document.getElementById('audioPlayer');
+
+icon.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    isDarkMode = !isDarkMode;
+    updateIcons();
+});
+
+musicIcon.addEventListener('click', () => {
+    isSoundOn = !isSoundOn;
+    toggleAudio();
+    updateIcons();
+});
+
+function toggleAudio() {
+    if (isSoundOn) {
+        audio.play();
+    } else {
+        audio.pause();
     }
 }
 
-// Function to toggle dark mode
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-  }
-  
-  // Event listener for clicking the dark mode toggle button (image)
-  document.getElementById('darkModeToggle').addEventListener('click', function() {
-    toggleDarkMode();
-  });
+function updateIcons() {
+    if (isDarkMode && isSoundOn) {
+        icon.src = 'images/sun.png';
+        musicIcon.src = 'images/yes_sound_black.png';
+    } else if (isDarkMode && !isSoundOn) {
+        icon.src = 'images/sun.png';
+        musicIcon.src = 'images/no_sound_black.png';
+    } else if (!isDarkMode && isSoundOn) {
+        icon.src = 'images/moon.jpg';
+        musicIcon.src = 'images/yes_sound_white.png';
+    } else {
+        icon.src = 'images/moon.jpg';
+        musicIcon.src = 'images/no_sound_white.png';
+    }
+}
 
-  
+audio.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+});
+
+
+
+  // To save audio state when the user clicks play/pause
+function toggleAudio() {
+  if (isSoundOn) {
+      audio.play();
+      localStorage.setItem('audioStatus', 'playing');
+  } else {
+      audio.pause();
+      localStorage.setItem('audioStatus', 'paused');
+  }
+}
+
+// To retrieve audio state on page load
+window.onload = function() {
+  const audioStatus = localStorage.getItem('audioStatus');
+  if (audioStatus === 'playing') {
+      audio.play();
+      isSoundOn = true;
+      updateIcons();
+  }
+};
+
 
 //scroll to top
 
@@ -54,8 +102,10 @@ toTop.addEventListener("click", (event) => {
 
 
 // contact button event
-var contact = document.getElementById("contact-button");
+document.addEventListener("DOMContentLoaded", function() {
+  var contact = document.getElementById("contact-button");
 
-contact.onclick = function(){
-  window.location.href = "contacts.html";
-}
+  contact.addEventListener("click", function() {
+    window.location.href = "contacts.html";
+  });
+});

@@ -18,6 +18,12 @@
     </head>
 
     <body>
+        <audio id="audioPlayer" preload="auto" loop>
+            <source src="audio/bg_music_1.mp3" type="audio/mpeg">
+            <source src="audio/bg_music_2.mp3" type="audio/mpeg">
+            <source src="audio/bg_music_3.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
         <header>
             <!-- navigation bar -->
             <nav>
@@ -30,6 +36,7 @@
                     <li><a href="resume.html">Resume</a></li>
                     <li><a href="contacts.html">Contact</a></li>
                     <li><img src="images/moon.jpg" class = "light-dark" id="darkModeToggle"></li>
+                    <li><img src="images/yes_sound_white.png" class="music" id = "musicToggle"></li>
                   </ul>
             </nav>
         </header>

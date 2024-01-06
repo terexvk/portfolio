@@ -68,7 +68,12 @@ nav {
     margin-bottom: 2px;
 }
 
-
+.music{
+  width:20px;
+  height:20px;
+  align-items:center;
+  margin-bottom: 2px;
+}
 
 .about-container {
     display: flex;
@@ -137,11 +142,12 @@ nav {
     height:10rem;
   }
 
-  .container .contact-button{
+  /* .container .contact-button{
     justify-content: center;
-  }
+  } */
 
   .contact-button {
+    justify-content: center;
     padding: 10px 20px;
     background-color: var(--nav-color);
     color: var(--text-color);
@@ -252,7 +258,7 @@ nav {
   }
 
 .contact-form input[type="submit"],
-.contact-form input[type="reset"] {
+.contact-form input[type="reset"]{
     padding: 10px 20px;
     background-color: var(--nav-color);
     color: var(--text-color);
