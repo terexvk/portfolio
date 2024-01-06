@@ -1,0 +1,275 @@
+:root{
+    --primary-color:black;
+    --nav-color:#121212;
+    --text-color:white;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.light-theme{
+    --primary-color:white;
+    --nav-color: #6AABD2;
+    --text-color: black;
+}
+
+body{
+    background-color: var(--primary-color);
+}
+
+nav {
+    background-color: var(--nav-color);
+    position:fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    width: 98%;
+    top:0;
+  }
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    margin-trim:5px;
+  }
+  
+.nav-menu li {
+    margin-right: 15px;
+    padding:5px;
+  }
+  
+.nav-menu li a {
+    color: var(--text-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+
+.logo-text{
+    color:var(--text-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+
+
+.light-dark{
+    width:20px;
+    height: 20px;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+
+
+.about-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .about-container:hover{
+    border: 5px solid var(--nav-color) !important;
+  }
+  
+  .content {
+    flex: 1;
+    padding-right: 20px;
+  }
+
+  .content h1{
+    justify-content: center;
+    text-align: center;
+    font-size:60px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .content h2{
+    justify-content: center;
+    text-align: center;
+    font-size:50px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .content h3{
+    justify-content: center;
+    text-align: center;
+    font-size:40px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .content p{
+    font-size:20px;
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .about-img{
+    width:30rem;
+    height: 25rem;
+  }
+
+  .project-1-img{
+    width: 30rem;
+    height:10rem;
+  }
+
+  .container .contact-button{
+    justify-content: center;
+  }
+
+  .contact-button {
+    padding: 10px 20px;
+    background-color: var(--nav-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+
+  .footer {
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.social-icons a {
+    color: var(--text-color); /* Icon color */
+    font-size: 24px;
+    margin: 0 10px; /* Adjust spacing between icons */
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.to-top{
+    background-color: var(--primary-color);
+    position: fixed;
+    bottom: 16px;
+    right:32px;
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: var(--text-color);
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s;
+}
+
+.to-top.active {
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust height for vertical centering */
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+}
+
+.resume-text {
+    flex: 1;
+}
+
+.resume-image img {
+    max-width: 100%; /* Adjust the image width as needed */
+    width: 10rem;
+    height:12rem;
+    display: block; /* Remove extra space below image */
+}
+
+
+.resume-table {
+    width: 100%; /* Adjust the width of the table */
+    border: 7px solid var(--nav-color); /* Set the border to a solid color */
+    border-collapse: collapse; /* Collapse borders into a single border line */
+}
+
+
+.resume-table th,
+.resume-table td {
+    padding: 8px; /* Adjust cell padding */
+    border: 5px solid var(--nav-color); /* Set cell borders to a solid color */
+    color: var(--text-color);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+
+.contact-container {
+    display: flex;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 0.002px solid var(--nav-color);
+    border-radius: 8px;
+  }
+
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+      background-color: var(--nav-color); 
+      padding:20px;
+      width: 40rem;
+      color: var(--text-color);
+  }
+
+.contact-form input[type="submit"],
+.contact-form input[type="reset"] {
+    padding: 10px 20px;
+    background-color: var(--nav-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+
+}
+
+.contact-form input[type="submit"]:hover,
+.contact-form input[type="reset"]:hover {
+    background-color: var(--primary-color);
+}
+
+
+
+  h2,h3,p,h1{
+    color:var(--text-color);
+  }
